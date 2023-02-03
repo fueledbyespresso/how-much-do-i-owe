@@ -1,0 +1,210 @@
+.App {
+    text-align: left;
+    min-height: 80vh;
+    font-size: 1.2em;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+*{
+    box-sizing: border-box;
+}
+label{
+    margin:.5em;
+    width:100%;
+    max-width: 40em;
+    input{
+        border: .1px #f1f2f6 solid;
+        background: #efefef;
+        width:100%;
+        padding: .5em;
+    }
+}
+button{
+    border: .1em #f1f2f6 solid;
+    padding: .5em 1em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+a{
+    color: #000;
+}
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; color: #000;}
+
+a:hover { text-decoration: none; color: #282c34;}
+
+a:active { text-decoration: none; }
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 80%;
+    padding: 1em;
+
+    .concerts{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content:center;
+
+        .concert-card{
+            margin:.75em;
+            padding:.5em;
+            background:#f6f6f6;
+            min-width:10em;
+            width: 100%;
+            max-width: 20em;
+            border-radius:.5em;
+            box-shadow: 4px 2px #f7e6cd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.15s ease-in-out;
+
+            .tour-name{
+                text-align: center;
+                font-size: 1.2em;
+            }
+            .favorite{
+                text-decoration: underline;
+            }
+            .spotify-logo{
+                align-items: flex-start;
+                margin:0 auto .25em 0;
+                height: 1.5em;
+                object-fit: contain;
+            }
+            .card-header-img{
+                justify-self: flex-start;
+                border-radius:.5em;
+                display: block;
+                height: 10em;
+                width: 100%;
+                object-fit: cover;
+            }
+            a.ticketmaster-link{
+                display: block;
+                margin:auto auto 0 auto;
+                padding: .25em .5em;
+                background: #026cdf;
+                color:#fff;
+                transition: .2s ease-in-out;
+                box-shadow: 6px 4px #026cdf;
+
+                &:hover{
+                    box-shadow: -4px -2px #026cdf;
+                    background: #fff;
+                    color:#026cdf;
+                }
+            }
+
+            &:hover{
+                box-shadow: -10px -8px #a7e6cd;
+            }
+        }
+    }
+}
+
+.not-logged-in{
+    padding: 1em;
+    h1{
+        font-size: 1.5em;
+        text-align: center;
+    }
+    h2{
+        font-size: 1.2em;
+        text-align: center;
+        color: #2C423F;
+    }
+    img{
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: 60em;
+        box-shadow: rgba(247, 230, 205, 1) 0 50px 100px -20px, rgba(247, 230, 205, 0.7) 0px 30px 60px -30px;
+        border-radius: .25em;
+    }
+    .spotify-login-button{
+        display: block;
+        border: .2em #1DB954 solid;
+        border-radius: 15em;
+        background: #1DB954;
+        margin: 4em auto;
+        text-align: center;
+        max-width: 15em;
+        color:#fff;
+        transition: all 0.15s ease-in-out;
+        a{
+            display: flex;
+            padding: .5em 1em;
+            color:#fff;
+            font-size: 1.2em;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            img{
+                display: inline-block;
+                height: 1.2em;
+                width: 1.2em;
+            }
+            &:visited{
+                color:#fff;
+            }
+        }
+        &:hover{
+            border: .2em #fff solid;
+
+            box-shadow: 10px 8px #1DB954;
+        }
+    }
+}
